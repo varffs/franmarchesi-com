@@ -1,4 +1,9 @@
-  <footer id="footer">
+  <footer id="footer" class="container">
+    <div class="grid-row">
+      <div class="grid-item item-s-12">
+        © Fran Marchesi, <?php echo date('Y'); ?>
+      </div>
+    </div>
   </footer>
 
 </section>
