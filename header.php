@@ -28,6 +28,15 @@ get_template_part('partials/seo');
 
 <section id="main-container">
 
-  <header id="header">
-    <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+  <header id="header" class="container">
+    <div class="grid-row">
+      <div class="grid-item item-s-6">
+        <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+      </div>
+      <div class="grid-item item-s-6">
+        <nav role="navigation" class="grid-row align-items-center justify-end">
+          <a class="grid-item navigation-item" href="<?php echo home_url(); ?>">Work</a>
+          <a class="grid-item navigation-item">About</a>
+        </nav>
+      </nav>
   </header>
