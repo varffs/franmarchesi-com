@@ -21,8 +21,8 @@ normalize()
 // FONTS
 @import 'fonts/fonts'
 
-$font-sans = font-stack('Helvetica')
-$font-serif = font-stack('Georgia')
+$font-sans = font-stack('ConduitITC')
+$font-serif = font-stack('Siena')
 
 // ******************************************************
 
@@ -33,15 +33,16 @@ $font-serif = font-stack('Georgia')
 
 $font-size-larger = 1.3rem
 
-$font-leading-basic = 1.35
-$font-leading-tighter = 1.15
-$font-leading-larger = 1.45
+$font-leading-basic = 1.2
+$font-leading-tighter = 1.1
+$font-leading-larger = 1.35
 
 $font-tracking-basic = .001em
 $font-tracking-wider = .05em
 
 html
-  font-family: $font-sans
+  font-family: $font-serif
+  font-weight: 200
   letter-spacing: $font-tracking-basic
 
 body
@@ -49,9 +50,11 @@ body
 
 .font-sans
   font-family: $font-sans
+  font-weight: bold
 
 .font-serif
   font-family: $font-serif
+  font-weight: 200
 
 .font-larger
   font-size: $font-size-larger
@@ -68,6 +71,11 @@ body
 
 $color-black = rgb(0, 0, 0)
 $color-white = rgb(255, 255, 255)
+$color-peach = rgb(255,	219,	213)
+$color-red = rgb(255, 62, 76)
+
+.text-color-red
+  color: $color-red
 
 // ******************************************************
 
@@ -75,7 +83,7 @@ $color-white = rgb(255, 255, 255)
 
 html
   color: $color-black
-  background-color: $color-white
+  background-color: $color-peach
 
 img
   height: auto
@@ -86,6 +94,24 @@ img
 
 .desktop-only
   display: none !important
+
+.grid-post
+  padding: 5rem
+  border: 1px solid $color-black
+  content-box: border-box
+
+hr
+  overflow: visible /* For IE */
+  padding: 0
+  border: none
+  border-top: 1px solid $color-red
+  color: $color-red
+
+// ******************************************************
+
+// TYPOGRAPHY
+
+// .font-size-big-copy
 
 // ******************************************************
 
