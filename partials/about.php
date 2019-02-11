@@ -15,7 +15,7 @@
       </div>
     </div>
 
-    <div class="grid-item item-s-12 item-m-5">
+    <div class="grid-item item-s-12 item-m-5 margin-bottom-basic">
       <h3 class="margin-bottom-basic">Get in touch</h3>
 
       <ul class="font-size-mid text-color-red margin-bottom-basic">
@@ -24,9 +24,9 @@
       </ul>
 
       <ul class="font-size-mid text-color-red">
-        <li>Instagram &rarr;</li>
-        <li>Twitter &rarr;</li>
-        <li>Linkedin &rarr;</li>
+        <li><a href="https://www.instagram.com/franmarchesi/" target="_blank" rel="noopener">Instagram &rarr;</a></li>
+        <li><a href="https://twitter.com/franmarchesi" target="_blank" rel="noopener">Twitter &rarr;</a></li>
+        <li><a href="https://uk.linkedin.com/in/fran-marchesi-05962938" target="_blank" rel="noopener">Linkedin &rarr;</a></li>
       </ul>
     </div>
 

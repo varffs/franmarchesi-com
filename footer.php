@@ -1,4 +1,4 @@
-  <footer id="footer" class="container">
+  <footer id="footer" class="container text-color-red">
     <div class="grid-row">
       <div class="grid-item item-s-12">
         © Fran Marchesi, <?php echo date('Y'); ?>
