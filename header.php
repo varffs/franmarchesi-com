@@ -28,7 +28,7 @@ get_template_part('partials/seo');
 
 <section id="main-container">
 
-  <header id="header" class="container">
+  <header id="header" class="container margin-top-large margin-bottom-large">
     <div class="grid-row">
       <div class="grid-item item-s-6">
         <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
