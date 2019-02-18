@@ -1,13 +1,23 @@
 <?php
 get_header();
 
-function renderGridContent($title) {
+// get query posts as an array
+$posts = $wp_query->posts;
+// shuffle array
+shuffle($posts);
+
+function renderHomeItem($post, $extraClasses = '') {
+  if (empty($post)) {
+    return;
+  }
 ?>
-<div class="home-item-content text-align-center">
-  <h4 class="text-color-red">2019</h4>
-  <h3 class="font-sans font-size-large"><?php echo $title; ?></h3>
-  <h4 class="font-style-italic">Brand Identity</h4>
-</div>
+<a href="<?php echo get_the_permalink($post->ID); ?>" class="home-item grid-item no-gutter item-s-12 <?php echo $extraClasses; ?>">
+  <div class="home-item-content text-align-center">
+    <h4 class="text-color-red">2019</h4>
+    <h3 class="home-item-title font-uppercase font-sans font-size-large"><?php echo $post->post_title; ?></h3>
+    <h4 class="home-item-category font-style-italic">Brand Identity</h4>
+  </div>
+</a>
 <?php
 }
 
@@ -24,103 +34,89 @@ function renderGridContent($title) {
           <div class="grid-row">
             <div class="grid-item no-gutter item-s-12 item-m-6">
               <div class="grid-row">
-                <div class="home-item grid-item no-gutter item-s-12 item-m-6">
-                  <?php renderGridContent('AROKIYAM'); ?>
-                </div>
-                <div class="home-item grid-item no-gutter item-s-12 item-m-6">
-                  <?php renderGridContent('RA250'); ?>
-                </div>
-                <div class="home-item grid-item no-gutter item-s-12">
-                  <?php renderGridContent('MARTIN SENYSZAK'); ?>
-                  <h3></h3>
-                </div>
+                <?php
+                  if (isset($posts[0])) {
+                    renderHomeItem($posts[0], 'item-m-6');
+                  }
+
+
+                  if (isset($posts[1])) {
+                    renderHomeItem($posts[1], 'item-m-6');
+                  }
+
+
+                  if (isset($posts[2])) {
+                    renderHomeItem($posts[2]);
+                  }
+                ?>
               </div>
             </div>
 
-            <div class="home-item grid-item no-gutter item-s-12 item-m-6">
-              <?php renderGridContent('JAMM STUDIOS'); ?>
-            </div>
+            <?php
+              if (isset($posts[3])) {
+                renderHomeItem($posts[3], 'item-m-6');
+              }
+            ?>
           </div>
 
           <!-- Row 2 -->
           <div class="grid-row">
-            <div class="home-item grid-item no-gutter item-s-12 item-m-9">
-              <?php renderGridContent('ROMANCE FM'); ?>
-            </div>
+            <?php
+              if (isset($posts[4])) {
+                renderHomeItem($posts[4], 'item-m-9');
+              }
 
-            <div class="home-item grid-item no-gutter item-s-12 item-m-3">
-              <?php renderGridContent('HARRIET HORTON'); ?>
-            </div>
+              if (isset($posts[5])) {
+                renderHomeItem($posts[5], 'item-m-3');
+              }
+            ?>
           </div>
 
           <!-- Row 3 -->
           <div class="grid-row">
-            <div class="home-item grid-item no-gutter item-s-12 item-m-6">
-              <?php renderGridContent('ELLE MAGAZINE'); ?>
-            </div>
+            <?php
+              if (isset($posts[6])) {
+                renderHomeItem($posts[6], 'item-m-6');
+              }
+            ?>
 
             <div class="grid-item no-gutter item-s-12 item-m-6">
               <div class="grid-row">
-                <div class="home-item grid-item no-gutter item-s-12">
-                  <?php renderGridContent('WORLDPAY'); ?>
-                </div>
-                <div class="home-item grid-item no-gutter item-s-12">
-                  <?php renderGridContent('RAPHA'); ?>
-                </div>
+                <?php
+                  if (isset($posts[7])) {
+                    renderHomeItem($posts[7]);
+                  }
+
+                  if (isset($posts[8])) {
+                    renderHomeItem($posts[8]);
+                  }
+                ?>
               </div>
             </div>
           </div>
 
           <!-- Row 4 -->
           <div class="grid-row">
-            <div class="home-item grid-item no-gutter item-s-12 item-m-4">
-              <?php renderGridContent('FUNHOUSE'); ?>
-            </div>
+            <?php
+              if (isset($posts[9])) {
+                renderHomeItem($posts[9], 'item-m-4');
+              }
 
-            <div class="home-item grid-item no-gutter item-s-12 item-m-4">
-              <?php renderGridContent('AUDIO NETWORK'); ?>
-            </div>
+              if (isset($posts[10])) {
+                renderHomeItem($posts[10], 'item-m-4');
+              }
 
-            <div class="home-item grid-item no-gutter item-s-12 item-m-4">
-              <?php renderGridContent('NIKE iD'); ?>
-            </div>
+              if (isset($posts[11])) {
+                renderHomeItem($posts[11], 'item-m-4');
+              }
+            ?>
           </div>
 
         </div>
       </div>
     </div>
 
-    <div class="container">
-      <div class="grid-row">
-        <div class="grid-item item-s-12">
-          <div class="grid-row">
-
-<?php
-if (have_posts()) {
-  while (have_posts()) {
-    the_post();
-?>
-
-        <article <?php post_class('grid-item no-gutter item-s-12 item-m-4'); ?> id="post-<?php the_ID(); ?>">
-          <div class="home-item">
-            <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
-          </div>
-        </article>
-
-<?php
-  }
-} else {
-?>
-        <article class="u-alert grid-item item-s-12"><?php _e('Sorry, no posts matched your criteria :{'); ?></article>
-<?php
-} ?>
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
-
-  <?php get_template_part('partials/pagination'); ?>
 
   <?php get_template_part('partials/about'); ?>
 
