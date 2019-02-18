@@ -10,12 +10,20 @@ function renderHomeItem($post, $extraClasses = '') {
   if (empty($post)) {
     return;
   }
+
+  $categories = wp_get_post_categories($post->ID, array('fields' => 'all'));
+
+  $categoryTitle = '';
+
+  if (count($categories)) {
+    $categoryTitle = $categories[0]->name;
+  }
 ?>
 <a href="<?php echo get_the_permalink($post->ID); ?>" class="home-item grid-item no-gutter item-s-12 <?php echo $extraClasses; ?>">
   <div class="home-item-content text-align-center">
-    <h4 class="text-color-red">2019</h4>
+    <h4 class="text-color-red"><?php echo get_the_date('Y', $post->ID); ?></h4>
     <h3 class="home-item-title font-uppercase font-sans font-size-large"><?php echo $post->post_title; ?></h3>
-    <h4 class="home-item-category font-style-italic">Brand Identity</h4>
+    <h4 class="home-item-category font-style-italic"><?php echo $categoryTitle; ?></h4>
   </div>
 </a>
 <?php
