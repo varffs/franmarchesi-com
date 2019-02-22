@@ -18,8 +18,16 @@ function renderHomeItem($post, $extraClasses = '') {
   if (count($categories)) {
     $categoryTitle = $categories[0]->name;
   }
+
+  // get thumbnail
+  $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'gallery' )
 ?>
 <a href="<?php echo get_the_permalink($post->ID); ?>" class="home-item grid-item no-gutter item-s-12 <?php echo $extraClasses; ?>">
+  <div class="home-item-image" <?php
+    if ($thumbnail) {
+      echo 'style="background-image: url(' . $thumbnail[0] . ');"';
+    }
+  ?>></div>
   <div class="home-item-content text-align-center">
     <h4 class="text-color-red"><?php echo get_the_date('Y', $post->ID); ?></h4>
     <h3 class="home-item-title font-uppercase font-sans font-size-large"><?php echo $post->post_title; ?></h3>
