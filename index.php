@@ -46,6 +46,10 @@ function renderHomeItem($post, $extraClasses = '') {
     <div class="container">
       <div class="grid-row margin-bottom-large">
         <div class="grid-item item-s-12">
+          <hr />
+        </div>
+
+        <div class="grid-item item-s-12">
 
           <!-- Row 1 -->
           <div class="grid-row">
