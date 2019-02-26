@@ -28,6 +28,7 @@ function renderHomeItem($post, $extraClasses = '') {
       echo 'style="background-image: url(' . $thumbnail[0] . ');"';
     }
   ?>></div>
+  <div class="home-item-image-overlay"></div>
   <div class="home-item-content text-align-center">
     <h4 class="text-color-red"><?php echo get_the_date('Y', $post->ID); ?></h4>
     <h3 class="home-item-title font-uppercase font-sans font-size-large"><?php echo $post->post_title; ?></h3>
