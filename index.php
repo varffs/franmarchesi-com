@@ -6,7 +6,7 @@ $posts = $wp_query->posts;
 // shuffle array
 shuffle($posts);
 
-function renderHomeItem($post, $extraClasses = '') {
+function renderHomeItem($post, $extraClasses = '', $titleSize = 'font-size-title') {
   if (empty($post)) {
     return;
   }
@@ -31,7 +31,7 @@ function renderHomeItem($post, $extraClasses = '') {
   <div class="home-item-image-overlay"></div>
   <div class="home-item-content text-align-center">
     <h4 class="text-color-red"><?php echo get_the_date('Y', $post->ID); ?></h4>
-    <h3 class="home-item-title font-uppercase font-sans font-size-large"><?php echo $post->post_title; ?></h3>
+    <h3 class="home-item-title font-uppercase font-sans <?php echo $titleSize; ?> line-tighter margin-top-small margin-bottom-small"><?php echo $post->post_title; ?></h3>
     <h4 class="home-item-category font-style-italic"><?php echo $categoryTitle; ?></h4>
   </div>
 </a>
@@ -67,7 +67,7 @@ function renderHomeItem($post, $extraClasses = '') {
 
 
                   if (isset($posts[2])) {
-                    renderHomeItem($posts[2]);
+                    renderHomeItem($posts[2], '', 'font-size-title-larger');
                   }
                 ?>
               </div>
@@ -75,7 +75,7 @@ function renderHomeItem($post, $extraClasses = '') {
 
             <?php
               if (isset($posts[3])) {
-                renderHomeItem($posts[3], 'item-m-6');
+                renderHomeItem($posts[3], 'item-m-6', 'font-size-title-largest');
               }
             ?>
           </div>
@@ -84,11 +84,11 @@ function renderHomeItem($post, $extraClasses = '') {
           <div class="grid-row">
             <?php
               if (isset($posts[4])) {
-                renderHomeItem($posts[4], 'item-m-9');
+                renderHomeItem($posts[4], 'item-m-9', 'font-size-title-largest');
               }
 
               if (isset($posts[5])) {
-                renderHomeItem($posts[5], 'item-m-3');
+                renderHomeItem($posts[5], 'item-m-3', 'font-size-title-larger');
               }
             ?>
           </div>
@@ -97,7 +97,7 @@ function renderHomeItem($post, $extraClasses = '') {
           <div class="grid-row">
             <?php
               if (isset($posts[6])) {
-                renderHomeItem($posts[6], 'item-m-6');
+                renderHomeItem($posts[6], 'item-m-6', 'font-size-title-largest');
               }
             ?>
 
@@ -105,11 +105,11 @@ function renderHomeItem($post, $extraClasses = '') {
               <div class="grid-row">
                 <?php
                   if (isset($posts[7])) {
-                    renderHomeItem($posts[7]);
+                    renderHomeItem($posts[7], '', 'font-size-title-larger');
                   }
 
                   if (isset($posts[8])) {
-                    renderHomeItem($posts[8]);
+                    renderHomeItem($posts[8], '', 'font-size-title-larger');
                   }
                 ?>
               </div>
