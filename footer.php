@@ -1,10 +1,12 @@
-  <footer id="footer" class="container text-color-red">
-    <div class="grid-row">
-      <div class="grid-item item-s-12">
-        © Fran Marchesi, <?php echo date('Y'); ?>
+  <div class="background-peach">
+    <footer id="footer" class="container padding-top-small padding-bottom-mid">
+      <div class="grid-row">
+        <div class="grid-item item-s-12">
+          <span class="text-color-red">© Fran Marchesi, <?php echo date('Y'); ?></span>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
 </section>
 
