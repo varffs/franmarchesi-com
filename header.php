@@ -36,7 +36,7 @@ get_template_part('partials/seo');
       <div class="grid-item item-s-6">
         <nav role="navigation" class="grid-row align-items-center justify-end">
           <a class="grid-item navigation-item" href="<?php echo home_url(); ?>">Work</a>
-          <a class="grid-item navigation-item">About</a>
+          <a id="about-link" class="grid-item navigation-item" href="<?php echo home_url('about'); ?>">About</a>
         </nav>
       </nav>
   </header>

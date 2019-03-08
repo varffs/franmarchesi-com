@@ -24,6 +24,17 @@ class Site {
   onReady() {
     lazySizes.init();
 
+    this.bind();
+
+    this.fixWidows();
+  }
+
+  bind() {
+    $('#about-link').click(function(event) {
+      event.preventDefault();
+
+      document.getElementById('about-wrapper').scrollIntoView(true);
+    });
   }
 
   fixWidows() {

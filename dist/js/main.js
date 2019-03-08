@@ -107,6 +107,19 @@ var Site = function () {
     key: 'onReady',
     value: function onReady() {
       _lazysizes2.default.init();
+
+      this.bind();
+
+      this.fixWidows();
+    }
+  }, {
+    key: 'bind',
+    value: function bind() {
+      $('#about-link').click(function (event) {
+        event.preventDefault();
+
+        document.getElementById('about-wrapper').scrollIntoView(true);
+      });
     }
   }, {
     key: 'fixWidows',

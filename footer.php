@@ -1,5 +1,5 @@
   <div class="background-peach">
-    <footer id="footer" class="container padding-top-small padding-bottom-mid">
+    <footer id="footer" class="container">
       <div class="grid-row">
         <div class="grid-item item-s-12">
           <span class="text-color-red">© Fran Marchesi, <?php echo date('Y'); ?></span>

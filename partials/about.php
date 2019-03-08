@@ -1,4 +1,4 @@
-<div class="background-peach">
+<div id="about-wrapper" class="background-peach">
   <section id="about" class="container padding-top-mid padding-bottom-mid">
     <div class="grid-row">
 
